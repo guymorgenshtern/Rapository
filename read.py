@@ -1,5 +1,16 @@
 #read_file = open("data.txt")
 
+def clean_square(file_name):
+    edit_file = open(file_name, "r")
+    text = edit_file.readlines()
+    edit_file.close()
+    edit_file = open(file_name, "w")
+    for line in text:
+        if "[" in line or "]" in line or line.strip() == '':
+            pass
+        else:
+            edit_file.write(line)
+    edit_file.close()
 
 def generate_word_list(file_name):
     words = []
@@ -32,7 +43,6 @@ def generate_prob_table(file_name):
 
     for line in lines:
         word_set = line.split()
-        print(words.index("&&&"))
         prob[words.index("&&&")][words.index(word_set[0])] += 1
         for i in range(len(word_set)):
             #Link word to next word in phrase
