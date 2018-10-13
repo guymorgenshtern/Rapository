@@ -43,5 +43,8 @@ def generate_text(items, data):
         #Immediately ends when end-of-line character is chosen
         if items[state] == END_OF_LINE:
             break
+        #Add space otherwise
+        else:
+            out_text += " "
 
     print(out_text)
