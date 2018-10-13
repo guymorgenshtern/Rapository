@@ -12,6 +12,15 @@ def clean_square(file_name):
             edit_file.write(line)
     edit_file.close()
 
+def filter(text):
+    # Replace swear words:
+    text = text.replace("fuck", "f***")
+    text = text.replace("shit", "s***")
+    text = text.replace("ass ", "a** ")
+    text = text.replace("bitch", "b****")
+    text = text.replace("nigg", "n***")
+    return text
+
 def generate_word_list(file_name):
     words = []
     read_file = open(file_name)
@@ -24,7 +33,6 @@ def generate_word_list(file_name):
 
     #Add end of line identifier
     words.append("&&&")
-    print(words)
     read_file.close()
     return words
 
@@ -51,7 +59,6 @@ def generate_prob_table(file_name):
             #If it is the last word, connect to end of line character
             else:
                 prob[words.index(word_set[i])][len(words) - 1] += 1
-    print(prob)
     read_file.close()
     return prob
 

@@ -46,13 +46,7 @@ for y in range(len(store_matrix)):
 for y in range(len(prob_table)):
     row = prob_table[y]
     for x in range(len(row)):
-        print(word_list[y])
-        print(word_list[x])
-        print()
         new_table[new_word_list.index(word_list[y])][new_word_list.index(word_list[x])] += prob_table[y][x]
-
-print("NOW")
-print(new_table)
 
 store_file.close()
 store_file = open("store.txt", "w")

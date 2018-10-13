@@ -19,4 +19,20 @@ for row in store_lines[1:]:
 
 post_table = percentage.generate_percent(prob_table)
 
-test.generate_text(word_list, post_table)
+chorus = read.filter(test.generate_text(word_list, post_table, 6))
+verses = []
+for i in range(6):
+    verses.append(read.filter(test.generate_text(word_list, post_table, 6)))
+
+#
+
+
+#
+
+
+
+
+for v in verses:
+    print(v)
+    print()
+    print(chorus)

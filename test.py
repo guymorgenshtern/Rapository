@@ -6,7 +6,7 @@ from random import random as rand
 END_OF_LINE = "&&&"
 
 
-def generate_text(items, data):
+def generate_text(items, data, max_lines):
     #Output text
     out_text = ""
     #List of 'words' (for index value)
@@ -25,7 +25,8 @@ def generate_text(items, data):
     #The current index
     state = items.index(END_OF_LINE)
 
-    for i in range(100):
+    lines = 0
+    while lines < max_lines:
         #Add current state to output
         if not items[state] == END_OF_LINE:
             out_text += items[state]
@@ -44,8 +45,9 @@ def generate_text(items, data):
         #Immediately ends when end-of-line character is chosen
         if items[state] == END_OF_LINE:
             out_text += "\n"
+            lines += 1
         #Add space otherwise
         else:
             out_text += " "
 
-    print(out_text)
+    return out_text
