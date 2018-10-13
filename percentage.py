@@ -10,7 +10,6 @@ for i in range(len(prob_table)):
         sigma += prob_table[i][j]
     if not sigma == 0:
         for j in range(len(prob_table[i])):
-            print((prob_table[i][j] / sigma), end=" ")
             prob_table[i][j] /= sigma
         print()
 
