@@ -32,6 +32,8 @@ def generate_prob_table(file_name):
 
     for line in lines:
         word_set = line.split()
+        print(words.index("&&&"))
+        prob[words.index("&&&")][words.index(word_set[0])] += 1
         for i in range(len(word_set)):
             #Link word to next word in phrase
             if not i == len(word_set) - 1:
@@ -43,4 +45,4 @@ def generate_prob_table(file_name):
     read_file.close()
     return prob
 
-generate_prob_table("data.txt")
+#generate_prob_table("data.txt")

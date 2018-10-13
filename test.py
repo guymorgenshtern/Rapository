@@ -23,11 +23,12 @@ def generate_text(items, data):
     #         ]
 
     #The current index
-    state = 0
+    state = items.index(END_OF_LINE)
 
     for i in range(100):
         #Add current state to output
-        out_text += items[state]
+        if not items[state] == END_OF_LINE:
+            out_text += items[state]
         #Generate fandom percent value
         r = rand()
         #Sum of all added chances
@@ -42,7 +43,7 @@ def generate_text(items, data):
                 break
         #Immediately ends when end-of-line character is chosen
         if items[state] == END_OF_LINE:
-            break
+            out_text += "\n"
         #Add space otherwise
         else:
             out_text += " "
