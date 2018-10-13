@@ -1,7 +1,9 @@
 #read_file = open("data.txt")
 
-def generate_word_list(read_file):
+
+def generate_word_list(file_name):
     words = []
+    read_file = open(file_name)
     lines = read_file.readlines()
     for line in lines:
         word_set = line.split()
@@ -17,7 +19,10 @@ def generate_word_list(read_file):
 
 
 #init array
-def generate_prob_table(words, lines):
+def generate_prob_table(file_name):
+    words = generate_word_list(file_name)
+    read_file = open(file_name)
+    lines = read_file.readlines()
     prob = []
     for i in range(len(words)):
         row = []
@@ -35,3 +40,7 @@ def generate_prob_table(words, lines):
             else:
                 prob[words.index(word_set[i])][len(words) - 1] += 1
     print(prob)
+    read_file.close()
+    return prob
+
+generate_prob_table("data.txt")
