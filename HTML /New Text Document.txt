@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+input[type=text], select {
+width: 70%;
+Padding: 8px 1px;
+border: 0;
+border-bottom: 2px dotted #56CB5A;
+box-sizing: border-box;
+padding: 10px 0;
+font: normal 13px Verdana;
+}
+
+.name {
+width: 70%;
+Padding: 5px 20px;
+display: inline-block;
+box-sizing: border-box;
+text-align: center; 
+}
+
+.email {
+width: 70%;
+Padding: 5px 20px;
+display: inline-block;
+box-sizing: border-box;
+text-align: center; 
+}
+
+.size {
+width: 70%;
+Padding: 5px 20px;
+display: inline-block;
+box-sizing: border-box;
+text-align: center; 
+}
+ 
+label {
+display:block;
+float:left;
+width:100%;
+font: normal 16px Arial;
+padding: 30px 0px;
+}
+
+h2 {
+font: normal 19px Verdana;
+}	
+
+*:focus {
+outline: none;
+}
+
+input[type=text]:hover, select:hover {
+border-bottom: 2px solid #56CB5A;
+opacity: 0.50;
+}
+
+input[type=text]:focus, select:focus {
+border-bottom: 2px solid #56CB5A;
+padding: 30px 0;
+font: normal 14px Verdana;
+}
+
+body {
+text-align: center;
+}
+	
+.order {
+}	
+
+.nav {
+background-color: #5fb962;
+overflow: hidden;
+}
+
+.nav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font: normal 14px Verdana;
+}
+
+.nav a:hover {
+background-color: #F2F2F2;
+color: black;
+border-bottom: 2px solid #56CB5A;
+}
+
+.nav a:active {
+background-color: #FFFFFF;
+color: black;
+border: 2px solid #56CB5A;
+}
+	
+</style>
+<head>
+
+</head>
+<body>
+
+
+<!-- navigation!-->
+<div class="nav">
+
+<a href="file:///C:/Users/CNS/Desktop/AACC%20Website/default%20page.html">Home</a>
+<a href="file:///C:/Users/CNS/Desktop/AACC%20Website/actionpage.html">Band Order</a>
+<a href="file:///C:/Users/CNS/Desktop/AACC%20Website/membership.html">Membership</a>
+ 
+</div>
+
+<h2> Band Order Form </h2>
+
+<div class="order"> 
+  <form>
+ 
+<label>Name:</label>    
+<div class= "name">
+     
+	<input type="text" name="Name" placeholder="Enter Your Name" required><br>
+	
+    </div>
+    <br>
+
+<label>Email Address:</label>
+<div class="email">
+     
+	<input type="text" name="Email" placeholder="Enter Your Email Address" required><br>
+    </div>
+    <br>
+
+<label>Band Size Required:</label>
+<div class="size">
+     
+	<select name="Band Size" id="size" required>
+	<option value="select">~select a size~</option>
+    <option  value="A">A</option>
+    <option  value="A">B</option>
+    <option  value="A">C</option>
+    <option  value="A">D</option>
+    <option  value="A">E</option>
+    <option  value="A">F</option>
+    <option  value="A">G</option>
+    <option  value="A">H</option>
+    <option  value="A">I</option>
+    <option  value="A">J</option>
+    <option  value="A">K</option>
+    <option  value="L">L</option>
+    <option  value="L">M</option>
+    <option  value="L">N</option>
+    <option  value="L">O</option>
+    <option  value="L">P</option>
+    <option  value="L">Q</option>
+    <option  value="L">R</option>
+    <option  value="L">S</option>
+    <option  value="T">T</option>
+    <option  value="T">U</option>
+    <option  value="T">V</option>
+    <option  value="T">U</option>
+    <option  value="T">X</option>
+    <option  value="T">Y</option>
+  </select>
+  </div>
+  <br>
+  </form>
+  <button type="button" onclick="myFunction()">continue to the next section</button>
+  </div>
+  
+     <script>
+	 function myFunction () {
+  var value = document.getElementById("size").value;
+  if (value == "A") {
+  document.write ("aa")
+  }
+ else if (value == "L") {
+document.write ("ll")
+}
+else if (value == "T") {
+document.write ("tt")
+}
+  }
+  </script>
+  
+</body>
+</html>
