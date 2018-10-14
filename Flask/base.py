@@ -1,4 +1,5 @@
 import logging
+import generator
 
 from flask import Flask, render_template
 
@@ -10,10 +11,10 @@ app = Flask(__name__)
 def index():
     return render_template("Home.html")
 
-@app.route('/h')
+@app.route('/gen')
 def hello():
     """Return a friendly HTTP greeting."""
-    return 'Hello World!'
+    return generator.create()
 
 
 @app.errorhandler(500)
