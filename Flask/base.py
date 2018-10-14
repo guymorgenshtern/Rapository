@@ -2,7 +2,7 @@ import logging
 import generator
 import merger
 
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect, url_for
 
 
 app = Flask(__name__)
@@ -26,6 +26,14 @@ def generation_plus():
 def adder():
     return render_template("form.html")
 
+@app.route('/addgen')
+def add_gen():
+    text = request.form['lyrics']
+    file = open("data.txt", "w")
+    file.write(text)
+    file.close()
+    merger.merge()
+    return redirect(url_for('/gen'))
 
 @app.route('/add', methods=['GET', 'POST'])
 def adder_inter():
