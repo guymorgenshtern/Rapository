@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<style>
+    .overall {
+background: rgb(0,0,0);
+margin-top: 30px;
+background-color: black;
+position: relative;
+left: 20%;
+width: 60%;
+padding: 70px 12px;
+opacity: 0.85;
+text-align: center;
+
+}
+
+</style>
 <head>
     <meta charset="UTF-8">
     <title>New Age Rap</title>
     <link href="{{ url_for('static', filename='gen.css')}}">
 </head>
 <body>
+<div class="border">
     <form action="" method="post">
         <label for="chorus">Number of choruses</label>
         <input type="number" id="chorus" name="chorus" value="6"/>
@@ -16,5 +32,6 @@
         <input type="submit" value="Click to regenerate" />
     </form>
     {{full_song | safe}}
+</div>
 </body>
 </html>
