@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New Age Rap</title>
+    <link href="{{ url_for('static', filename='gen.css')}}">
+</head>
+<body>
+    {{full_song | safe}}
+    <script src="{{ url_for('static', filename='gen.js')}}"><</script>
+</body>
+</html>

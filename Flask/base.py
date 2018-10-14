@@ -1,7 +1,8 @@
 import logging
 import generator
+import merger
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 
 app = Flask(__name__)
@@ -12,10 +13,23 @@ def index():
     return render_template("Home.html")
 
 @app.route('/gen')
-def hello():
-    """Return a friendly HTTP greeting."""
-    return generator.create()
+def generation():
+    """Return a friendly HTTP 'greeting'."""
+    return render_template("generation.html", full_song=generator.create())
 
+@app.route('/add')
+def adder():
+    return render_template("form.html")
+
+
+@app.route('/add', methods=['GET', 'POST'])
+def adder_inter():
+    text = request.form['lyrics']
+    file = open("data.txt", "w")
+    file.write(text)
+    file.close()
+    merger.merge()
+    return "Added lyrics!"
 
 @app.errorhandler(500)
 def server_error(e):
