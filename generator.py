@@ -18,21 +18,36 @@ for row in store_lines[1:]:
 
 
 post_table = percentage.generate_percent(prob_table)
+print("Chorus Repetition")
+chorus_rep = int(input())
+print("Chorus Length ")
+chorus_length = int(input())
 
-chorus = read.filter(test.generate_text(word_list, post_table, 6))
-verses = []
-for i in range(6):
-    verses.append(read.filter(test.generate_text(word_list, post_table, 6)))
+print("Verse Length ")
+verse_length = int(input())
 
-#
+chorus_section = True
+
+chorus = read.filter(test.generate_text(word_list, post_table, chorus_length))
+
+#extra_sections = abs(chorus_rep - verse_rep)
+
+song = []
+
+for j in range(chorus_rep * 2):
+
+    if chorus_section == True:
+        print("Chorus: ")
+        print(" ")
+        print(chorus)
+        song.append(chorus)
+        chorus_section = False
+    else:
+        verses = read.filter(test.generate_text(word_list, post_table, verse_length))
+        print("Verse: ")
+        print(" ")
+        print(verses)
+        song.append(verses)
+        chorus_section = True
 
 
-#
-
-
-
-
-for v in verses:
-    print(v)
-    print()
-    print(chorus)
