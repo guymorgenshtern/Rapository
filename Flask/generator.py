@@ -40,14 +40,14 @@ def create():
             print("Chorus: ")
             print(" ")
             print(chorus)
-            song += chorus
+            song += "<h3>Chorus</h3>" + chorus + "<br>"
             chorus_section = False
         else:
             verses = read.filter(test.generate_text(word_list, post_table, verse_length))
             print("Verse: ")
             print(" ")
             print(verses)
-            song += verses
+            song += "<h3>Verse{}</h3>".format((j + 1) // 2) + verses + "<br>"
             chorus_section = True
     return song
 

@@ -44,7 +44,7 @@ def generate_text(items, data, max_lines):
                 break
         #Immediately ends when end-of-line character is chosen
         if items[state] == END_OF_LINE:
-            out_text += "\n"
+            out_text += "<br>"
             lines += 1
         #Add space otherwise
         else:
