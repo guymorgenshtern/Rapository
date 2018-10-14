@@ -33,6 +33,7 @@ border: 2px solid #56CB5A;
 
 
 .overall {
+font: normal 13px Verdana;
     color: white;
     background: rgb(0,0,0);
     margin-top: 30px;
@@ -48,7 +49,22 @@ border: 2px solid #56CB5A;
 header {
 position: relative;
 z-index: 10;
+}
 
+form {
+text-align: left;
+position: relative;
+left: 40%;
+}
+
+form input {
+    margin: 3px;
+}
+
+form input[type=submit] {
+    
+    width: 200px;
+    height: 100px;
 }
 
 </style>
@@ -71,10 +87,13 @@ z-index: 10;
     <form action="" method="post">
         <label for="chorus">Number of choruses</label>
         <input type="number" id="chorus" name="chorus" value="6"/>
+        <br>
         <label for="chorus_length">Chorus Length</label>
         <input type="number" id="chorus_length" name="chorus_length" value="4"/>
+        <br>
         <label for="verse_length">Verse Length</label>
         <input type="number" id="verse_length" name="verse_length" value="6"/>
+        <br>
         <input type="submit" value="Click to regenerate" />
     </form>
     {{full_song | safe}}
