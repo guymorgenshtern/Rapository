@@ -2,7 +2,7 @@ import read
 import test
 import percentage
 
-def create():
+def create(cr=6, cl=4, vl=6):
     #Read markov from 'database' file
     store_file = open("store.txt")
     store_lines = store_file.readlines()
@@ -19,12 +19,12 @@ def create():
 
     post_table = percentage.generate_percent(prob_table)
     print("Chorus Repetition")
-    chorus_rep = 6#int(input())
+    chorus_rep = cr#int(input())
     print("Chorus Length ")
-    chorus_length = 4#int(input())
+    chorus_length = cl#int(input())
 
     print("Verse Length ")
-    verse_length = 6#int(input())
+    verse_length = vl#int(input())
 
     chorus_section = True
 

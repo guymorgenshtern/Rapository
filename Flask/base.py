@@ -17,6 +17,11 @@ def generation():
     """Return a friendly HTTP 'greeting'."""
     return render_template("generation.html", full_song=generator.create())
 
+@app.route('/gen', methods=['GET', 'POST'])
+def generation_plus():
+    new_text = generator.create(int(request.form['chorus']), int(request.form['chorus_length']), int(request.form['verse_length']))
+    return render_template("generation.html", full_song=new_text)
+
 @app.route('/add')
 def adder():
     return render_template("form.html")

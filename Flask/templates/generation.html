@@ -6,7 +6,15 @@
     <link href="{{ url_for('static', filename='gen.css')}}">
 </head>
 <body>
+    <form action="" method="post">
+        <label for="chorus">Number of choruses</label>
+        <input type="number" id="chorus" name="chorus" value="6"/>
+        <label for="chorus_length">Chorus Length</label>
+        <input type="number" id="chorus_length" name="chorus_length" value="4"/>
+        <label for="verse_length">Verse Length</label>
+        <input type="number" id="verse_length" name="verse_length" value="6"/>
+        <input type="submit" value="Click to regenerate" />
+    </form>
     {{full_song | safe}}
-    <script src="{{ url_for('static', filename='gen.js')}}"><</script>
 </body>
 </html>
