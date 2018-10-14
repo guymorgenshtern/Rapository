@@ -19,6 +19,7 @@ def filter(text):
     text = text.replace("ass ", "a** ")
     text = text.replace("bitch", "b****")
     text = text.replace("nigg", "n***")
+    text = text.replace("fag", "f**")
     return text
 
 def generate_word_list(file_name):
