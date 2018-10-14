@@ -47,7 +47,7 @@ def create():
             print("Verse: ")
             print(" ")
             print(verses)
-            song += "<h3>Verse{}</h3>".format((j + 1) // 2) + verses + "<br>"
+            song += "<h3>Verse {}</h3>".format((j + 1) // 2) + verses + "<br>"
             chorus_section = True
     return song
 
